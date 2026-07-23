@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kareem Al Fakhry — Senior Software Engineer in Toronto. I build large-scale backend platforms in Go.">
+  <title>Kareem Al Fakhry — Senior Software Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Set theme before paint to avoid flash
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved || preferred;
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+      <span class="sun" aria-hidden="true">☀</span><span class="moon" aria-hidden="true">☾</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <h1>Hi, I'm Kareem&nbsp;Al&nbsp;Fakhry</h1>
+      <p class="tagline">
+        Senior Software Engineer based in Toronto. I design and build
+        large-scale backend platforms in Go — notification systems,
+        social features, and event-driven infrastructure serving
+        90M+&nbsp;monthly users.
+      </p>
+      <div class="links">
+        <a href="https://linkedin.com/in/kalfakhry" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/kalfakhry" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:kalfakhry@gmail.com">Email</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume&nbsp;(PDF)</a>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I'm a backend engineer with 10+ years of experience building the
+        systems behind consumer products at scale. For the last seven years
+        I worked at <strong>Wattpad</strong>, where I led the rebuild of the
+        notification platform — moving delivery off a PHP monolith onto Go
+        services handling 1,700+ notifications per second — and drove the
+        consolidation of comments, reactions, and trust &amp; safety into a
+        unified Social Platform.
+      </p>
+      <p>
+        Before that I was at <strong>Cisco Systems</strong>, where I received
+        the 2018 Cisco Pioneer Award for core contributions to pyATS, Cisco's
+        flagship network test framework.
+      </p>
+      <p>
+        I care about pragmatic architecture, mentoring engineers into
+        leadership, and keeping production boring.
+        <!-- EDIT ME: add a sentence about your real interests outside work -->
+      </p>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Wattpad</h3>
+          <span class="dates">2019 — 2026</span>
+        </div>
+        <p class="role">Senior Software Engineer · Notifications &amp; Social Platforms</p>
+        <ul>
+          <li>Architected and led the rebuild of Wattpad's notification stack, replacing PHP monolith delivery with Go services (Kafka, gRPC/Protobuf) handling <strong>1,700+ notifications/sec</strong> for <strong>90M+ monthly active users</strong>, eliminating weekly incidents triggered by high-traffic story releases.</li>
+          <li>Built the notification scheduling engine (EventBridge, Lambda, DynamoDB) that enabled campaign-based marketing notifications for the first time, driving a <strong>30% increase</strong> in campaign-driven engagement.</li>
+          <li>Led the consolidation of comments, reactions, and trust &amp; safety logic into a unified Go-based Social Platform.</li>
+          <li>Migrated Social Feed infrastructure to Go services, driving a <strong>40% increase</strong> in feed engagement.</li>
+          <li>Led technical mentoring for a team of 6, coaching intermediate engineers into project leadership.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Cisco Systems</h3>
+          <span class="dates">2015 — 2019</span>
+        </div>
+        <p class="role">Software Engineer III · Core Software Group</p>
+        <ul>
+          <li>Awarded the <strong>2018 Cisco Pioneer Award</strong> for core contributions to pyATS, Cisco's flagship test framework used globally for network automation.</li>
+          <li>Led development of Xpresso, an internal CI platform, transitioning from a monolithic Django app to cloud-based microservices.</li>
+          <li>Architected a Django application automating package distribution, reducing release processing time by <strong>400%</strong>.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Ciena</h3>
+          <span class="dates">2013 — 2014</span>
+        </div>
+        <p class="role">Software Development Intern · Packet XC Development</p>
+        <ul>
+          <li>Built automation tooling, regression test frameworks, and log parsing scripts for SONET/SDH packet transport systems.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ================= RESUME ================= -->
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>
+        Want the full picture?
+        <a class="button" href="resume.pdf" target="_blank" rel="noopener">Download my resume</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Kareem Al Fakhry · Toronto, ON</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

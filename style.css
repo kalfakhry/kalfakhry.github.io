@@ -1,0 +1,193 @@
+/* ---------- Theme variables ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a2e;
+  --muted: #5c6370;
+  --accent: #0b6e4f;
+  --accent-soft: #0b6e4f1a;
+  --border: #e4e6ea;
+  --nav-bg: #ffffffcc;
+}
+
+:root[data-theme="dark"] {
+  --bg: #101418;
+  --text: #e8eaed;
+  --muted: #9aa3ad;
+  --accent: #4ecf9d;
+  --accent-soft: #4ecf9d1f;
+  --border: #262c33;
+  --nav-bg: #101418cc;
+}
+
+/* ---------- Base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  transition: background 0.25s, color 0.25s;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section { padding: 3.5rem 0 0.5rem; }
+
+h1 { font-size: 2.4rem; line-height: 1.2; letter-spacing: -0.02em; }
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.4rem;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+p { margin-bottom: 1rem; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  backdrop-filter: blur(10px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav nav { display: flex; gap: 1.5rem; }
+
+.nav a {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.nav a:hover { color: var(--accent); text-decoration: none; }
+
+#theme-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+:root[data-theme="light"] .moon { display: none; }
+:root[data-theme="dark"] .sun { display: none; }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 5rem; }
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 38rem;
+  margin-top: 1rem;
+}
+
+.links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+.links a {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.links a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* ---------- Experience ---------- */
+.job {
+  border-left: 2px solid var(--border);
+  padding: 0 0 2rem 1.5rem;
+  position: relative;
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.45em;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.job h3 { font-size: 1.15rem; }
+
+.dates { color: var(--muted); font-size: 0.9rem; }
+
+.role { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.6rem; }
+
+.job ul { padding-left: 1.1rem; }
+.job li { margin-bottom: 0.45rem; font-size: 0.97rem; }
+
+/* ---------- Resume button ---------- */
+.button {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.button:hover { opacity: 0.88; text-decoration: none; }
+:root[data-theme="dark"] .button { color: #0e1113; }
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 4rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 520px) {
+  h1 { font-size: 1.9rem; }
+  .hero { padding-top: 3rem; }
+}
